@@ -1,0 +1,50 @@
+show the repo
+show the business-card-template URL running
+copy the default values from business-card-template 
+
+mkdir business-card-generator
+    npm init -y
+    mkdir resources && touch data.json
+        paste default values 
+    worker.js
+        async function main(data) {
+            const pid = process.pid
+            console.log(`${pid} got message: ${data.name}`);
+        }
+        process.once('message', main)
+    touch index.js
+        all
+    run it
+
+    npm i puppeteer uuid
+    worker.js
+        const querystring = require('querystring')
+        
+        const qs = createQueryStringFromObject(data);
+        const finalUrl = `${BC_URL}?${qs}`
+        console.log(finalUrl)
+
+        create render
+            ->  headless: false,
+    index.js -> only one
+    run
+    index.js -> all
+        headless: true
+    run
+    make 70 copies on the JSON and show errors
+    npm i puppeteer-cluster
+    touch puppeteerCluster.js
+        copy dependencies from index.js
+        copy all worker.js
+
+        import puppeteer-cluster
+        change main()
+        change render()
+        
+        
+
+    run
+
+
+
+https://blog.insiderattack.net/deep-dive-into-worker-threads-in-node-js-e75e10546b11
